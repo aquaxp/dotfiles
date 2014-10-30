@@ -4,21 +4,25 @@
 install caskroom/cask/brew-cask
 tap caskroom/versions
 
-cask install dropbox 2> /dev/null
-cask install google-chrome 2> /dev/null
-cask install google-chrome-canary 2> /dev/null
-cask install imagealpha 2> /dev/null
-cask install imageoptim 2> /dev/null
-cask install iterm2 2> /dev/null
-cask install macvim 2> /dev/null
-cask install miro-video-converter 2> /dev/null
-cask install opera 2> /dev/null
-cask install opera-developer 2> /dev/null
-cask install opera-next 2> /dev/null
-cask install sublime-text 2> /dev/null
-cask install the-unarchiver 2> /dev/null
+cask install adium 2> /dev/null
+cask install xquartz 2> /dev/null
 cask install torbrowser 2> /dev/null
+cask install tftpserver 2> /dev/null
+#cask install shrook 2> /dev/null
+cask install remote-desktop-connection 2> /dev/null
+cask install keka 2> /dev/null
+cask install github 2> /dev/null
+cask install firefox 2> /dev/null
+cask install epubquicklook 2> /dev/null
+cask install emacs 2> /dev/null
+cask install macvim 2> /dev/null
+cask install djview 2> /dev/null
+cask install cyberduck 2> /dev/null
+cask install adobe-photoshop-lightroom 2> /dev/null
+cask install android-file-transfer 2> /dev/null
+cask install android-studio 2> /dev/null
+cask install skype 2> /dev/null
+cask install mixxx 2> /dev/null
+cask install sublime-text 2> /dev/null
 cask install transmission 2> /dev/null
-cask install ukelele 2> /dev/null
-cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null

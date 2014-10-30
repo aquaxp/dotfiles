@@ -26,16 +26,11 @@ install bash-completion
 # Install wget with IRI support
 install wget --enable-iri
 
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-install ringojs
-install narwhal
-
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
 install homebrew/dupes/grep
 install homebrew/dupes/screen
-install homebrew/php/php55 --with-gmp
+#install homebrew/php/php55 --with-gmp
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups
 install bfg
@@ -66,17 +61,19 @@ install ack
 install git
 install imagemagick --with-webp
 install lynx
-install node # This installs `npm` too using the recommended installation method
+#install node # This installs `npm` too using the recommended installation method
 install p7zip
 install pigz
 install pv
 install rename
-install rhino
+#install rhino
 install tree
 install webkit2png
 install zopfli
+install tmux
+install mc
 
-install homebrew/versions/lua52
+#install homebrew/versions/lua52
 
 # Remove outdated versions from the cellar
 cleanup

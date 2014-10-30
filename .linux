@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# useful stuff for one shot setup
+
+#apt-get install tmux mc
