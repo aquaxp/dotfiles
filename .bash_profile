@@ -1,10 +1,28 @@
+[ -z "$PS1" ] && return
+export EDITOR=vim
+
+if [ -n "$TERM" ]; then
+    tput_und=\\[$(tput sgr 0 1)\\]     # Underline
+    tput_bold=\\[$(tput bold)\\]       # Bold
+    tput_rst=\\[$(tput sgr0)\\]        # Reset
+    tput_black=\\[$(tput setaf 0)\\]   # Black
+    tput_red=\\[$(tput setaf 1)\\]     # Red
+    tput_green=\\[$(tput setaf 2)\\]   # Green
+    tput_yellow=\\[$(tput setaf 3)\\]  # Yellow
+    tput_blue=\\[$(tput setaf 4)\\]    # Blue
+    tput_magenta=\\[$(tput setaf 5)\\] # Magenta
+    tput_cyan=\\[$(tput setaf 6)\\]    # Cyan
+    tput_white=\\[$(tput setaf 7)\\]   # White
+fi
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+# * ~/.work can be used for other settings used only on work.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra,work}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -17,6 +35,9 @@ shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
+
+# Enable history verification
+shopt -s histverify
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
@@ -32,17 +53,14 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
 
-# Enable tab completion for `g` by marking it as an alias for `git`
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-	complete -o default -o nospace -F _git g;
-fi;
-
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh;
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Add tab completion for `defaults read|write NSGlobalDomain`
-# You could just use `-g` instead, but I like being explicit
-complete -W "NSGlobalDomain" defaults;
+if [ `uname` == "Darwin" ]; then
+  # Add tab completion for `defaults read|write NSGlobalDomain`
+  # You could just use `-g` instead, but I like being explicit
+  complete -W "NSGlobalDomain" defaults;
 
-# Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+  # Add `killall` tab completion for common apps
+  complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+fi

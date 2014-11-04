@@ -6,3 +6,54 @@ defscrollback 32000
 
 # Always start `screen` with UTF-8 enabled (`screen -U`)
 defutf8 on
+
+# Allow bold colors - necessary for some reason
+attrcolor b ".I"
+
+# Erase background with current bg color
+defbce "on"
+
+# Status line
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+#hardstatus string ' %{S}||'
+
+#' #S' windows: | #[fg=white,bg=colour234]#I #W, current "#[fg=colour25,bg=colour39,noreverse,bold]#I #W" |   '#[bold]#H #[fg=black][%H:%M, %d-%m-%y]#[default] '
+
+# Our warning of activity
+activity "Activity in %t(%n)"
+
+# Left Right meta key mods
+#ALT-,. and ALT-<>
+bindkey "^[<" eval number !echo $WINDOW-1|bc
+bindkey "^[>" eval number !echo $WINDOW+1|bc
+bindkey "^[," prev
+bindkey "^[." next
+
+bindkey "\0331" select 1
+bindkey "\0332" select 2
+bindkey "\0333" select 3
+bindkey "\0334" select 4
+bindkey "\0335" select 5
+bindkey "\0336" select 6
+bindkey "\0337" select 7
+bindkey "\0338" select 8
+bindkey "\0339" select 9
+
+
+# Enable altscreen support
+altscreen on
+# ???
+attrcolor b ".I"
+# ???
+defflow off
+# Enbale login mode
+deflogin on
+term screen-256color
+# Disabling visual bell
+vbell off
+vbellwait 0.5
+msgwait 0.5
+
+# Make screen start login shells
+shell -$SHELL

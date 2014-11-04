@@ -8,7 +8,7 @@ cask install adium 2> /dev/null
 cask install xquartz 2> /dev/null
 cask install torbrowser 2> /dev/null
 cask install tftpserver 2> /dev/null
-#cask install shrook 2> /dev/null
+# cask install shrook 2> /dev/null
 cask install remote-desktop-connection 2> /dev/null
 cask install keka 2> /dev/null
 cask install github 2> /dev/null

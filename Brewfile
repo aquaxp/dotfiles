@@ -24,7 +24,7 @@ install bash
 install bash-completion
 
 # Install wget with IRI support
-install wget --enable-iri
+install wget --with-iri
 
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
