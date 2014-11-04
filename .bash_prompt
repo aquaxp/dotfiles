@@ -98,9 +98,9 @@ fi;
 
 # Highlight the hostname when connected via SSH.
 if [[ "${SSH_TTY}" ]]; then
-	hostPS="\[${white}\]@\[${bold}${red}\]\h";
+	hostPS="\[${white}\]@\[${bold}${red}\]\h ";
 else
-	hostPS="";
+	hostPS=" ";
 fi;
 
 # Set the terminal title to the current working directory.
@@ -108,7 +108,7 @@ PS1="\[\033]0;\w\007\]";
 PS1+="\[${bold}\]\n"; # newline
 PS1+="\[${white}\]["
 PS1+="\[${userStyle}\]\u"; # username
-PS1+="${hostPS} "
+PS1+="${hostPS}"
 PS1+="\[${green}\]\w"; # working directory
 PS1+="\$(prompt_git \"${white} on ${violet}\")"; # Git repository details
 PS1+="\[${white}\]]"

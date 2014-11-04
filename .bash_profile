@@ -1,20 +1,6 @@
 [ -z "$PS1" ] && return
 export EDITOR=vim
 
-if [ -n "$TERM" ]; then
-    tput_und=\\[$(tput sgr 0 1)\\]     # Underline
-    tput_bold=\\[$(tput bold)\\]       # Bold
-    tput_rst=\\[$(tput sgr0)\\]        # Reset
-    tput_black=\\[$(tput setaf 0)\\]   # Black
-    tput_red=\\[$(tput setaf 1)\\]     # Red
-    tput_green=\\[$(tput setaf 2)\\]   # Green
-    tput_yellow=\\[$(tput setaf 3)\\]  # Yellow
-    tput_blue=\\[$(tput setaf 4)\\]    # Blue
-    tput_magenta=\\[$(tput setaf 5)\\] # Magenta
-    tput_cyan=\\[$(tput setaf 6)\\]    # Cyan
-    tput_white=\\[$(tput setaf 7)\\]   # White
-fi
-
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 

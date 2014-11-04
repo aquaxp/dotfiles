@@ -16,9 +16,9 @@ set visible-stats on
 set show-all-if-ambiguous on
 
 # Enabling magic space in Bash
-$if Bash
-	Space: magic:space
-$endif
+#$if Bash
+#	Space: magic:space
+#$endif
 
 # Cycling potencial completes
 "\M-s": menu-complete
