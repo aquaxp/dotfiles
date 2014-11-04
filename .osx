@@ -505,7 +505,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 # Remove useless icons from Safari’s bookmarks bar
-defaults write com.apple.Safari ProxiesInBookmarksBar "("Reading List")"
+#defaults write com.apple.Safari ProxiesInBookmarksBar "("Reading List")"
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
@@ -804,6 +804,7 @@ defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Fi
 python ~/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/\
 Contents/Resources/GoogleSoftwareUpdateAgent.app/Contents/Resources/\
 install.py --uninstall
+mkdir -p ~/Library/Google
 touch ~/Library/Google/GoogleSoftwareUpdate
 sudo chown root ~/Library/Google/GoogleSoftwareUpdate
 sudo chmod 644 ~/Library/Google/GoogleSoftwareUpdate
@@ -811,6 +812,7 @@ sudo chmod 644 ~/Library/Google/GoogleSoftwareUpdate
 sudo python /Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/\
 Contents/Resources/GoogleSoftwareUpdateAgent.app/Contents/Resources/\
 install.py --uninstall
+mkdir -p /Library/Google
 sudo touch /Library/Google/GoogleSoftwareUpdate
 sudo chown root /Library/Google/GoogleSoftwareUpdate
 sudo chmod 644 /Library/Google/GoogleSoftwareUpdate
