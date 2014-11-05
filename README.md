@@ -71,12 +71,31 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ./.osx
 ```
 
+### Disabling big brother's eye
+
+If you've upgraded to Mac OS X Yosemite (10.10) and you're using the default settings, each time you start typing in Spotlight (to open an application or search for a file on your computer), your local search terms and location are sent to Apple and third parties (including Microsoft).
+
+Use this [script](https://fix-macosx.com/) to disable phonehome functionality.
+
+```bash
+python ./nophonehome.py
+```
+
+
+### Install Homebrew
+
+Useful osx package manager
+
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
 ### Install Homebrew formulae
 
 When setting up a new Mac, you may want to install some common [Homebrew](http://brew.sh/) formulae (after installing Homebrew, of course):
 
 ```bash
-brew bundle ./Brewfile
+./brew.sh
 ```
 
 ### Install native apps with `brew cask`
@@ -84,5 +103,5 @@ brew bundle ./Brewfile
 You could also install native apps with [`brew cask`](https://github.com/phinze/homebrew-cask):
 
 ```bash
-brew bundle ./Caskfile
+./cask.sh
 ```
