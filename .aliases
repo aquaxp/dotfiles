@@ -102,7 +102,7 @@ alias dt="cd ~/Desktop"
 command -v idb > /dev/null && alias idb="idb -gdb -quiet"
 
 # Start GDB in quiet mode
-command -v gdb > /dev/null && alias idb="gdb -q"
+command -v gdb > /dev/null && alias gdb="gdb -q"
 
 #--
 if [ `uname` == "Darwin" ]; then
