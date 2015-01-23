@@ -15,8 +15,9 @@ export PROMT_COMMAND=`history -a`
 # Prefer US English
 # en_US may increase performance in some cases
 export LANG="en_US"
-#export LANG="en_US.UTF-8";
-export LC_ALL="en_US.UTF-8";
+# for MC compatibility
+# export LANG="en_US.UTF-8";
+# export LC_ALL="en_US.UTF-8";
 
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="${yellow}";
