@@ -1,10 +1,11 @@
 # Make vim the default editor
-export EDITOR="vim";
+export EDITOR='vim';
 
 # Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768;
-export HISTFILESIZE=$HISTSIZE;
-export HISTCONTROL=ignoredups;
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+# Omit dublicates and commands that begin with a space from history
+export HISTCONTROL='ignoreboth';
 
 # Make some commands not show up in history
 export HISTIGNORE="&:ls:cd:cd -:pwd:exit:date:* --help";
@@ -14,7 +15,7 @@ export PROMT_COMMAND=`history -a`
 
 # Prefer US English
 # en_US may increase performance in some cases
-export LANG="en_US"
+export LANG='en_US'
 # for MC compatibility
 # export LANG="en_US.UTF-8";
 # export LC_ALL="en_US.UTF-8";
@@ -23,10 +24,10 @@ export LANG="en_US"
 export LESS_TERMCAP_md="${yellow}";
 
 # Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X";
+export MANPAGER='less -X';
 
 # Always enable colored `grep` output
-export GREP_OPTIONS="--color=auto";
+export GREP_OPTIONS='--color=auto';
 
 # Quit Bash only after twice Ctrl-D
 export IGNOREEOF=1
