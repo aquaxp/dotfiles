@@ -63,9 +63,6 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 # OS X has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
@@ -104,7 +101,7 @@ command -v idb > /dev/null && alias idb="idb -gdb -quiet"
 # Start GDB in quiet mode
 command -v gdb > /dev/null && alias gdb="gdb -q"
 
-#--
+# OS specific things
 if [ `uname` == "Darwin" ]; then
 	# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 	alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
@@ -153,4 +150,8 @@ if [ `uname` == "Darwin" ]; then
 
 	# Lock the screen (when going AFK)
 	alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+	# Recursively delete `.DS_Store` files
+	alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
 fi
