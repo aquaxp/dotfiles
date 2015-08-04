@@ -12,7 +12,6 @@ function cleanup() {
 
 function doIt() {
 	rsync   --exclude ".git/" \
-		--exclude "init/" \
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
