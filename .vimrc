@@ -19,7 +19,7 @@ set gdefault
 set encoding=utf-8 nobomb
 " Change mapleader
 let mapleader=","
-" Don’t add empty newlines at the end of files
+" Don't add empty newlines at the end of files
 set binary
 set noeol
 " Centralize backups, swapfiles and undo history
@@ -29,7 +29,7 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
-" Don’t create backups when editing files in certain directories
+" Don't create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
 
 " Respect modeline in files
@@ -74,10 +74,10 @@ set title
 " Show the (partial) command as it’s being typed
 set showcmd
 " Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
+"if exists("&relativenumber")
+"	set relativenumber
+"	au BufReadPost * set relativenumber
+"endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 

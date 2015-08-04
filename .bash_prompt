@@ -100,9 +100,9 @@ else
 	userStyle="${orange}";
 fi;
 
-# Highlight the hostname when connected via SSH.
+# Highlight the hostname when connected via SSH. : instad space for scp usage
 if [[ "${SSH_TTY}" ]]; then
-	hostPS="\[${white}\]@\[${bold}${red}\]\h ";
+	hostPS="\[${white}\]@\[${bold}${red}\]\h:";
 else
 	hostPS=" ";
 fi;

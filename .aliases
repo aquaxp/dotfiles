@@ -6,7 +6,7 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 
 # Use colordiff instead of diff
-[ `which colordiff >/dev/null 2>&1` ] && alias diff=colordiff
+[ `which colordiff > /dev/null 2>&1` ] && alias diff=colordiff
 
 # My customized ps
 alias myps='ps -ef | grep $USER | grep -v grep'
@@ -103,7 +103,7 @@ command -v gdb > /dev/null && alias gdb="gdb -q"
 # OS specific things
 if [ `uname` == "Darwin" ]; then
 	# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-	alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+	alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
 	# Clean up LaunchServices to remove duplicates in the “Open With” menu
 	alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"

@@ -2,14 +2,14 @@
 # Usage: `./brew.sh`
 
 function brewInst() {
-	# Make sure we’re using the latest Homebrew
+	# Make sure we're using the latest Homebrew
 	brew update
 
 	# Upgrade any already-installed formulae
-	brew upgrade
+	brew upgrade --all
 
 	# Install GNU core utilities (those that come with OS X are outdated)
-	echo "Don’t forget to add \`$(brew --prefix coreutils)/libexec/gnubin\` to \`\$PATH\`."
+	echo "Don't forget to add \`$(brew --prefix coreutils)/libexec/gnubin\` to \`\$PATH\`."
 	brew install coreutils
 	#sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
@@ -20,9 +20,10 @@ function brewInst() {
 	# Install GNU `sed`, overwriting the built-in `sed`
 	brew install gnu-sed --default-names
 	# Install Bash 4
-	# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
+	# Note: don't forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
 	brew install bash
-	brew install bash-completion
+	brew tap homebrew/versions
+	brew install bash-completion2
 
 	# Install wget with IRI support
 	brew install wget --with-iri
@@ -47,6 +48,7 @@ function brewInst() {
 	brew install john
 	brew install knock
 	brew install nmap
+	brew install netpbm
 	brew install pngcheck
 	brew install sqlmap
 	brew install tcpflow
@@ -58,6 +60,7 @@ function brewInst() {
 
 	# Install other useful binaries
 	brew install ack
+	brew install dark-mode
 	#install exiv2
 	brew install git
 	brew install imagemagick --with-webp
