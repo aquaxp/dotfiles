@@ -9,6 +9,12 @@ if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/n
 	export TERM='gnome-256color';
 elif infocmp screen-256color >/dev/null 2>&1; then
 	export TERM='screen-256color';
+# Some fallbacks for systems without infocmp
+# TODO Make fallbacks more clear and compact
+elif ls /usr/share/terminfo/?/gnome-256color >/dev/null 2>&1; then
+	export TERM='gnome-256color'
+elif ls /usr/share/terminfo/?/screen-256color >/dev/null 2>&1; then
+	export TERM='screen-256color';
 else
 	export TERM='screen';
 fi;
