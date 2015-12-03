@@ -6,12 +6,15 @@ export NODE_REPL_HISTORY_FILE=~/.node_history;
 # Allow 32. entries; the default is 1000.
 export NODE_REPL_HISTORY_SIZE='32768';
 
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8';
+
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
 # Omit dublicates and commands that begin with a space from history
 export HISTCONTROL='ignoreboth';
-
+exp
 # Make some commands not show up in history
 export HISTIGNORE="&:ls:cd:cd -:pwd:exit:date:* --help";
 
