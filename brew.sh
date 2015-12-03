@@ -63,6 +63,7 @@ function brewInst() {
 	brew install dark-mode
 	#install exiv2
 	brew install git
+	brew install git-lfs
 	brew install imagemagick --with-webp
 	brew install lynx
 	#install node # This installs `npm` too using the recommended installation method
