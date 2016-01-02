@@ -808,6 +808,13 @@ sudo chmod 644 /Library/Google/GoogleSoftwareUpdate
 # defaults write com.jibapps.TunesArt IconBehavior -int 3
 
 ###############################################################################
+# Photos.app                                                                #
+###############################################################################
+
+# Disable hot plug autostart
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
