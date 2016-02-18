@@ -14,7 +14,7 @@ export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
 # Omit dublicates and commands that begin with a space from history
 export HISTCONTROL='ignoreboth';
-exp
+
 # Make some commands not show up in history
 export HISTIGNORE="&:ls:cd:cd -:pwd:exit:date:* --help";
 
