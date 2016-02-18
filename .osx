@@ -4,7 +4,7 @@
 
 # Ask for the administrator password upfront
 sudo -v
-
+t
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
@@ -51,6 +51,9 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
+
+# Disable the over-the-top focus ring animation
+defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
 # Disable smooth scrolling
 # (Uncomment if you’re on an older Mac that messes up the animation)
@@ -345,6 +348,9 @@ defaults write com.apple.NetworkBrowser DisableAirDrop -boolean YES
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
+# Show the /Volumes folder
+sudo chflags nohidden /Volumes
+
 # Remove Dropbox’s green checkmark icons in Finder
 #file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
 #[ -e "${file}" ] && mv -f "${file}" "${file}.bak"
@@ -389,6 +395,9 @@ defaults write com.apple.dock show-process-indicators -bool true
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
 #defaults write com.apple.dock persistent-apps -array
+
+# Show only open applications in the Dock
+#defaults write com.apple.dock static-only -bool true
 
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
