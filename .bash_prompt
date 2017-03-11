@@ -13,6 +13,9 @@ elif infocmp screen-256color >/dev/null 2>&1; then
 # TODO Make fallback more clear and compact
 elif ls /usr/share/terminfo/?/screen-256color >/dev/null 2>&1; then
 	export TERM='screen-256color';
+# Fallback for Windows_NT (May work only on U4Win shell)
+elif [ "$(uname)" == "Windows_NT" ]; then
+	export TERM='msys';
 else
 	export TERM='screen';
 fi;
@@ -104,7 +107,7 @@ else
 	userStyle="${orange}";
 fi;
 
-# Highlight the hostname when connected via SSH. : instad space for scp usage
+# Highlight the hostname when connected via SSH. : instead of space for scp usage
 if [[ "${SSH_TTY}" ]]; then
 	hostPS="\[${white}\]@\[${bold}${red}\]\h:";
 else
