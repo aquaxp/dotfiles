@@ -168,4 +168,6 @@ if [ `uname` == "Darwin" ]; then
 	# Recursively delete `.DS_Store` files
 	alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
+	# Airport CLI alias
+	alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 fi
