@@ -37,8 +37,8 @@ function brewInst() {
 
 	# Install more recent versions of some OS X tools
 	brew install vim --with-override-system-vi
-	brew install homebrew/dupes/grep
-	brew install homebrew/dupes/screen
+	brew install grep
+	brew install screen
 	#install homebrew/php/php55 --with-gmp
 
 	# Install some CTF tools; see https://github.com/ctfs/write-ups
@@ -67,7 +67,6 @@ function brewInst() {
 
 	# Install other useful binaries
 	brew install ack
-	brew install dark-mode
 	#install exiv2
 	brew install git
 	brew install git-lfs
@@ -78,9 +77,7 @@ function brewInst() {
 	brew install pigz
 	brew install pv
 	brew install rename
-	#install rhino
 	brew install tree
-	brew install webkit2png
 	brew install zopfli
 	brew install tmux
 	brew install mc
