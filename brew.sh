@@ -32,6 +32,9 @@ function brewInst() {
 	# Install wget with IRI support
 	brew install wget --with-iri
 
+	# Install GnuPG
+	brew install gnupg
+
 	# Install more recent versions of some OS X tools
 	brew install vim --with-override-system-vi
 	brew install homebrew/dupes/grep
