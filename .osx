@@ -355,9 +355,6 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Disable AirDrop
 defaults write com.apple.NetworkBrowser DisableAirDrop -boolean YES
 
-# Enable the MacBook Air SuperDrive on any Mac
-#sudo nvram boot-args="mbasd=1"
-
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
