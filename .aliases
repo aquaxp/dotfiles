@@ -14,7 +14,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias myps='ps -ef | grep $USER | grep -v grep'
 
 # Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
+alias reload="exec ${SHELL} -l"
 
 # Forcing color mode in MC
 alias mc="mc -c"
@@ -60,10 +60,6 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
 
@@ -87,7 +83,7 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+	alias "${method}"="lwp-request -m '${method}'"
 done
 
 # Make Grunt print stack traces by default
