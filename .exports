@@ -42,7 +42,7 @@ export IGNOREEOF=1
 # OS specific section
 if [ `uname` == "Darwin" ]; then
 	# Link Homebrew casks in `/Applications` rather than `~/Applications`
-	export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/etc/Caskroom";
+	export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 fi
 
 # Avoid issues with `gpg` as installed via Homebrew.
